@@ -1,47 +1,62 @@
 {
-    "version": "3.42.3.424",
-    "description": "Tencent Meeting provides one-stop audio and video conferencing solutions.",
+    "version": "3.43.2.406",
+    "description": "腾讯会议，腾讯的一款视频会议软件 | A meeting software by Tencent",
     "homepage": "https://meeting.tencent.com/",
     "license": {
-        "identifier": "Proprietary",
-        "url": "https://meeting.tencent.com/declare.html"
+        "identifier": "Freemium"
     },
-    "url": "https://updatecdn.meeting.qq.com/cos/f7a5f035cc430fa9cd9daea0776ba864/TencentMeeting_0300000000_3.42.3.424_x86_64.publish.officialwebsite.exe#/dl.7z",
-    "hash": "md5:f7a5f035cc430fa9cd9daea0776ba864",
-    "post_install": [
-        "Get-ChildItem \"$dir\\`$_*\" | Rename-Item -NewName \"$version\" -Force",
-        "Remove-Item \"$dir\\`$*\" -Recurse -Force -ErrorAction SilentlyContinue",
-        "Remove-Item \"$dir\\wemeetapp_new.exe\" -Force -ErrorAction SilentlyContinue",
-        "create_startmenu_shortcuts $manifest $original_dir $global $architecture",
-        "$manifest.shortcuts = @()"
-    ],
-    "bin": [
-        [
-            "wemeetapp.exe",
-            "tencent-meeting"
-        ]
-    ],
-    "shortcuts": [
-        [
-            "wemeetapp.exe",
-            "Tencent Meeting"
-        ]
-    ],
-    "checkver": {
-        "url": "https://meeting.tencent.com/web-service/query-download-info?q=[{%22package-type%22:%22app%22,%22channel%22:%220300000000%22,%22arch%22:%22x86_64%22,%22platform%22:%22windows%22}]&nonce=0000000000000000",
-        "script": [
-            "$script:ver = json_path $page '$.info-list[0].version' -single $true",
-            "$script:matchesHashtable = @{'url' = json_path $page '$.info-list[0].url' -single $true}",
-            "$script:regexp = $null"
-        ]
-    },
-    "autoupdate": {
-        "url": "$matchUrl#/dl.7z",
-        "hash": {
-            "jsonpath": "$.info-list[0].md5",
-            "mode": "json",
-            "url": "https://meeting.tencent.com/web-service/query-download-info?q=[{%22package-type%22:%22app%22,%22channel%22:%220300000000%22,%22arch%22:%22x86_64%22,%22platform%22:%22windows%22}]&nonce=AAAAAAAAAAAAAAAA"
+    "architecture": {
+        "64bit": {
+            "url": "https://updatecdn.meeting.qq.com/cos/7c52674366ed0ca6c6ba76c0f0e4be1d/TencentMeeting_0300000000_3.43.2.406_x86_64.publish.exe",
+            "hash": "2c9f8300f72d2c751811048a6f58734e59651d86e6226194b679bc011f278bc6"
         }
     },
-    "notes": "We don't persist your Tencent Meeting data, they are still storaged in \"$env:APPDATA\\Tencent\\WeMeet\"."
+    "location": "$env:ProgramFiles\\Tencent\\WeMeet",
+    "link": "$env:AppData\\Tencent\\WeMeet",
+    "cleanup": "$env:AppData\\WeMeetApp",
+    "admin": true,
+    "pre_install": [
+        "if (!$bucket) { $bucket = (scoop config).'abgox-abyss-bucket-name' }",
+        ". $bucketsdir\\$bucket\\util\\1.ps1",
+        "A-Start-Install",
+        "A-Install-App -ArgumentList '/SilentInstall=0','/StartProcess=0'"
+    ],
+    "post_install": [
+        "if (!$bucket) { $bucket = (scoop config).'abgox-abyss-bucket-name' }",
+        ". $bucketsdir\\$bucket\\util\\1.ps1",
+        "A-Complete-Install"
+    ],
+    "pre_uninstall": [
+        "if (!$bucket) { $bucket = (scoop config).'abgox-abyss-bucket-name' }",
+        ". $bucketsdir\\$bucket\\util\\1.ps1",
+        "A-Start-Uninstall",
+        "A-Stop-Process",
+        "$Uninstaller = Get-ChildItem \"$env:ProgramFiles\\Tencent\\WeMeet\" WeMeetUninstall.exe -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 1",
+        "A-Remove-Link",
+        "A-Uninstall-App -Uninstaller $Uninstaller.FullName"
+    ],
+    "post_uninstall": [
+        "if (!$bucket) { $bucket = (scoop config).'abgox-abyss-bucket-name' }",
+        ". $bucketsdir\\$bucket\\util\\1.ps1",
+        "A-Complete-Uninstall"
+    ],
+    "checkver": {
+        "script": [
+            ". $pwd\\util\\1.ps1",
+            "$res, $out = A-Get-InstallerInfoFromWinget 'Tencent.TencentMeeting' 'exe'",
+            "$out"
+        ],
+        "regex": "(?:.*ver:(?<version>[^;]+))(?:.*x64:(?<x64>[^;]+))?(?:.*x86:(?<x86>[^;]+))?(?:.*arm64:(?<arm64>[^;]+))?"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "$matchX64",
+                "hash": {
+                    "url": "temp-autoupdate.json",
+                    "jsonpath": "$.x64_machine.InstallerSha256"
+                }
+            }
+        }
+    }
 }

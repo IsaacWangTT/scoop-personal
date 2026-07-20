@@ -1,0 +1,27 @@
+{
+    "version": "3.2.14",
+    "description": "ATK Hub / VXE",
+    "homepage": "https://vxe.com",
+    "license": "Freeware",
+    "url": "https://dl-global.atk.io/ATK-hub/atk-hub-3.2.14.exe#/dl.7z",
+    "hash": "a55fa446f7613cc44b362d087cb409110458038fa4adb41f9047797eba515a94",
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
+        ]
+    },
+    "shortcuts": [
+        [
+            "ATK Hub.exe",
+            "ATK Hub"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.vxe.com/v1/device/update/win32/version",
+        "jsonpath": "$.data.version"
+    },
+    "autoupdate": {
+        "url": "https://dl-global.atk.io/ATK-hub/atk-hub-$version.exe#/dl.7z"
+    }
+}

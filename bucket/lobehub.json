@@ -1,12 +1,12 @@
 {
-    "version": "2.2.15",
+    "version": "2.2.16",
     "description": "LobeHub - an open-source, modern design AI Agent Workspace.",
     "homepage": "https://github.com/lobehub/lobehub",
     "license": "LobeHub Community License",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/lobehub/lobehub/releases/download/v2.2.15/LobeHub-2.2.15-setup.exe#/dl.7z",
-            "hash": "ef98a79fdadc76618c26d62a402268423f1d06fdb3759edcdb5296c0267622ae"
+            "url": "https://github.com/lobehub/lobehub/releases/download/v2.2.16/LobeHub-2.2.16-setup.exe#/dl.7z",
+            "hash": "c6268794659424938d149e4c4b4666f6dbe42c8095ea45c0dc60972368c35071"
         }
     },
     "installer": {

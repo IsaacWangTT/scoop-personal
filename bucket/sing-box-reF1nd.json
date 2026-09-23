@@ -1,0 +1,40 @@
+{
+    "version": "1.14.1",
+    "description": "The universal proxy platform, sing-box with custom APIs by reF1nd",
+    "homepage": "https://github.com/reF1nd/sing-box",
+    "license": "GPL-3.0-or-later",
+    "notes": [
+        "Run with a config file: sing-box run -c <config.json> (the executable is still sing-box.exe)",
+        "This build includes custom control APIs by reF1nd, see https://github.com/reF1nd/sing-box for details.",
+        "Pin this version against auto-updates with: scoop hold sing-box-reF1nd"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.1-reF1nd/sing-box-1.14.1-reF1nd-windows-amd64.zip",
+            "hash": "fd37c9d54ee20bf22d8c82a680c93d739550e781c88941783892b144088f08ae",
+            "extract_dir": "sing-box-1.14.1-reF1nd-windows-amd64"
+        },
+        "arm64": {
+            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.1-reF1nd/sing-box-1.14.1-reF1nd-windows-arm64.zip",
+            "hash": "73d9ee6acded689efdd7d26d0bc2be45bb061e59bd0a44ea254081f1edb56904",
+            "extract_dir": "sing-box-1.14.1-reF1nd-windows-arm64"
+        }
+    },
+    "bin": "sing-box.exe",
+    "checkver": {
+        "url": "https://github.com/reF1nd/sing-box-releases/releases.atom",
+        "regex": "releases/tag/v([\\d.]+)-reF1nd"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-amd64.zip",
+                "extract_dir": "sing-box-$version-reF1nd-windows-amd64"
+            },
+            "arm64": {
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-arm64.zip",
+                "extract_dir": "sing-box-$version-reF1nd-windows-arm64"
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "version": "1.14.2",
+    "description": "The universal proxy platform, sing-box with custom APIs by reF1nd",
+    "homepage": "https://github.com/reF1nd/sing-box",
+    "license": "GPL-3.0-or-later",
+    "notes": [
+        "Run with a config file: sing-box run -c <config.json> (the executable is still sing-box.exe)",
+        "This build includes custom control APIs by reF1nd, see https://github.com/reF1nd/sing-box for details.",
+        "Pin this version against auto-updates with: scoop hold sing-box-reF1nd"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.2-reF1nd/sing-box-1.14.2-reF1nd-windows-amd64.zip",
+            "hash": "a6251111a70fc863bb272a4f98f12fae7169ca9ee7fd2c3816a5b8bbe7af97dd",
+            "extract_dir": "sing-box-1.14.2-reF1nd-windows-amd64"
+        },
+        "arm64": {
+            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.2-reF1nd/sing-box-1.14.2-reF1nd-windows-arm64.zip",
+            "hash": "aff26488a607b71bcafc73562c425061196f1c862fbf2bb07112022bb3af2ba9",
+            "extract_dir": "sing-box-1.14.2-reF1nd-windows-arm64"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\")) { New-Item -Path \"$persist_dir\" -ItemType Directory | Out-Null }",
+        "if (!(Test-Path \"$persist_dir\\config.json\")) {",
+        "   $utf8NoBom = New-Object System.Text.UTF8Encoding($false)",
+        "   [System.IO.File]::WriteAllText(\"$persist_dir\\config.json\", \"{}`n\", $utf8NoBom)",
+        "}",
+        "if (!(Test-Path \"$persist_dir\\cache.db\")) { New-Item -Path \"$persist_dir\\cache.db\" -ItemType File | Out-Null }"
+    ],
+    "bin": "sing-box.exe",
+    "persist": [
+        "config",
+        "config.d",
+        "config.json",
+        "cache.db"
+    ],
+    "checkver": {
+        "url": "https://github.com/reF1nd/sing-box-releases/releases.atom",
+        "regex": "Repository/\\d+/v(.+?)<"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-amd64.zip",
+                "extract_dir": "sing-box-$version-reF1nd-windows-amd64"
+            },
+            "arm64": {
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-arm64.zip",
+                "extract_dir": "sing-box-$version-reF1nd-windows-arm64"
+            }
+        }
+    }
+}

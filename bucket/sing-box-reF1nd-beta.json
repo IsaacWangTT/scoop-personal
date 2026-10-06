@@ -35,7 +35,7 @@
         "config.json",
         "cache.db"
     ],
-"checkver": {
+    "checkver": {
         "github": "https://github.com/reF1nd/sing-box-releases",
         "prerelease": true,
         "regex": "v([\\d\\w.-]+)-reF1nd"

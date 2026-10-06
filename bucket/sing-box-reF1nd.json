@@ -36,8 +36,8 @@
         "cache.db"
     ],
     "checkver": {
-        "url": "https://github.com/reF1nd/sing-box-releases/releases.atom",
-        "regex": "releases/tag/v([\\d.]+)-reF1nd"
+        "github": "https://github.com/reF1nd/sing-box-releases",
+        "regex": "v([\\d.]+)-reF1nd$"
     },
     "autoupdate": {
         "architecture": {

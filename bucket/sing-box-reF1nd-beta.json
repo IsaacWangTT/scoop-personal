@@ -1,5 +1,5 @@
 {
-    "version": "1.15.0-alpha.10",
+    "version": "1.15.0-alpha.7",
     "description": "The universal proxy platform, sing-box with custom APIs by reF1nd",
     "homepage": "https://github.com/reF1nd/sing-box",
     "license": "GPL-3.0-or-later",
@@ -43,8 +43,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-amd64.zip",
-                "extract_dir": "sing-box-$version-reF1nd-windows-amd64"
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-amd64v3.zip",
+                "extract_dir": "sing-box-$version-reF1nd-windows-amd64v3"
             },
             "arm64": {
                 "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-arm64.zip",

@@ -41,12 +41,12 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-amd64.zip",
-                "extract_dir": "sing-box-$version-reF1nd-windows-amd64"
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version/sing-box-$version-windows-amd64.zip",
+                "extract_dir": "sing-box-$version-windows-amd64"
             },
             "arm64": {
-                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version-reF1nd/sing-box-$version-reF1nd-windows-arm64.zip",
-                "extract_dir": "sing-box-$version-reF1nd-windows-arm64"
+                "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v$version/sing-box-$version-windows-arm64.zip",
+                "extract_dir": "sing-box-$version-windows-arm64"
             }
         }
     }

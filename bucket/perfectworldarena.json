@@ -19,7 +19,7 @@
     ],
     "checkver": {
         "url": "https://client.wmpvp.com/download/latest.yml",
-        "regex": "perfectworldarena_win32_v([\\d.]+).exe"
+        "regex": "version:\\s*([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://client.wmpvp.com/download/perfectworldarena_win32_v$version.exe#/dl.7z",

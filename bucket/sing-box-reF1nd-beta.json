@@ -1,5 +1,5 @@
 {
-    "version": "1.15.0-alpha.10",
+    "version": "1.15.0-alpha.11",
     "description": "The universal proxy platform, sing-box with custom APIs by reF1nd",
     "homepage": "https://github.com/reF1nd/sing-box",
     "license": "GPL-3.0-or-later",
@@ -10,14 +10,14 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.15.0-alpha.10-reF1nd/sing-box-1.15.0-alpha.10-reF1nd-windows-amd64v3.zip",
-            "hash": "5f1f3cb27055ba084037ff360c3357cb8a7d576f6fe783df73a3112dbca404e8",
-            "extract_dir": "sing-box-1.15.0-alpha.10-reF1nd-windows-amd64v3"
+            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.15.0-alpha.11-reF1nd/sing-box-1.15.0-alpha.11-reF1nd-windows-amd64v3.zip",
+            "hash": "5dd45340d6ca107566485b31214ff557df9e502440d7a554e68ad98f752d1e1f",
+            "extract_dir": "sing-box-1.15.0-alpha.11-reF1nd-windows-amd64v3"
         },
         "arm64": {
-            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.15.0-alpha.10-reF1nd/sing-box-1.15.0-alpha.10-reF1nd-windows-arm64.zip",
-            "hash": "7c3cd61dcc5f289b236dec934e95a78b001b72dfcd1d7afd458d89639e22f09f",
-            "extract_dir": "sing-box-1.15.0-alpha.10-reF1nd-windows-arm64"
+            "url": "https://github.com/reF1nd/sing-box-releases/releases/download/v1.15.0-alpha.11-reF1nd/sing-box-1.15.0-alpha.11-reF1nd-windows-arm64.zip",
+            "hash": "9fa641f95ff5dc7bc84523bbb251ff5379fb9eb6594b84ad86ccddd46853ba03",
+            "extract_dir": "sing-box-1.15.0-alpha.11-reF1nd-windows-arm64"
         }
     },
     "pre_install": [

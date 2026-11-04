@@ -1,0 +1,21 @@
+{
+    "version": "1.5.6",
+    "description": "Open source guitar tablature editor",
+    "homepage": "https://www.tuxguitar.app/",
+    "license": "GPL-2.0-or-later",
+    "url": "https://downloads.sourceforge.net/projects/tuxguitar/files/TuxGuitar/TuxGuitar-1.5.6/tuxguitar-1.5.6-windows-x86.zip",
+    "hash": "sha1:15f74237a9178ae45206bcb9bd2ec7514804cdc8",
+    "extract_dir": "tuxguitar-1.5.6-windows-x86",
+    "bin": "tuxguitar.exe",
+    "shortcuts": [
+        [
+            "tuxguitar.exe",
+            "TuxGuitar"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/helge17/tuxguitar/releases/download/$version/tuxguitar-$version-windows-swt-x86_64.zip",
+        "extract_dir": "tuxguitar-$version-windows-swt-x86_64"
+    }
+}

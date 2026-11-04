@@ -15,8 +15,15 @@
             "纯粹直播"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "url": "https://api.github.com/repos/liuchuancong/pure_live/releases/latest",
+        "regex": "PureLive-(?<version>[\\d.]+)-(?<build>[\\d]+)-windows-x64-portable\\.zip"
+    },
     "autoupdate": {
-        "url": "https://github.com/liuchuancong/pure_live/releases/download/v$match1/PureLive-$match1-$match2-windows-x64-portable.zip"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/liuchuancong/pure_live/releases/download/v$version/PureLive-$version-$matchBuild-windows-x64-portable.zip"
+            }
+        }
     }
 }

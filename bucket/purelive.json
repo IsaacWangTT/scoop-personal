@@ -1,25 +1,33 @@
 {
-    "version": "3.1.19",
-    "description": "纯粹直播:哔哩哔哩/虎牙/斗鱼/快手/抖音/网易cc/YY直播/Twitch直播/SOOP直播/M38自定义源应有尽有。",
+    "version": "3.1.17",
+    "description": "基于 Flutter 的开源多平台直播聚合播放器",
     "homepage": "https://github.com/liuchuancong/pure_live",
-    "license": "AGPL-3.0-only",
-    "url": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-windows-x64-portable.zip",
-    "hash": "",
-    "persist": [
-        "AppData",
-        "data"
-    ],
+    "license": {
+        "identifier": "AGPL-3.0",
+        "url": "https://github.com/liuchuancong/pure_live?tab=AGPL-3.0-1-ov-file"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-windows-x64-portable.zip",
+            "hash": "f90d7f77409641e5a7404b84354fa7e8529bf9eb70ef5985b92f3cf5509392e6"
+        }
+    },
     "shortcuts": [
         [
             "pure_live.exe",
             "纯粹直播"
         ]
     ],
+    "persist": "AppData",
     "checkver": {
         "url": "https://api.github.com/repos/liuchuancong/pure_live/releases/latest",
         "regex": "PureLive-(?<version>[\\d.]+)-(?<build>[\\d]+)-windows-x64-portable\\.zip"
     },
     "autoupdate": {
-        "url": "https://github.com/liuchuancong/pure_live/releases/download/v$version/PureLive-$version-$matchBuild-windows-x64-portable.zip"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/liuchuancong/pure_live/releases/download/v$version/PureLive-$version-$matchBuild-windows-x64-portable.zip"
+            }
+        }
     }
 }

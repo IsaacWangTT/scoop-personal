@@ -1,7 +1,7 @@
 {
     "version": "1.5.6",
     "description": "Open source guitar tablature editor",
-    "homepage": "https://www.tuxguitar.app/",
+    "homepage": "https://github.com/helge17/tuxguitar",
     "license": "GPL-2.0-or-later",
     "url": "https://downloads.sourceforge.net/projects/tuxguitar/files/TuxGuitar/TuxGuitar-1.5.6/tuxguitar-1.5.6-windows-x86.zip",
     "hash": "sha1:15f74237a9178ae45206bcb9bd2ec7514804cdc8",

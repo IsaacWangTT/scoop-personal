@@ -1,5 +1,5 @@
 {
-    "version": "3.1.17",
+    "version": "3.1.19",
     "description": "基于 Flutter 的开源多平台直播聚合播放器",
     "homepage": "https://github.com/liuchuancong/pure_live",
     "license": {
@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-windows-x64-portable.zip",
-            "hash": "f90d7f77409641e5a7404b84354fa7e8529bf9eb70ef5985b92f3cf5509392e6"
+            "hash": "b87a93a8a1fbe1f6dbd5bfa24f0bfe45ebe0e7c68249707870613d55c0694f6f"
         }
     },
     "shortcuts": [

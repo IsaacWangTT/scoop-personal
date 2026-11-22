@@ -21,7 +21,7 @@
         "if (!(Test-Path -LiteralPath \"$persist_dir\\config.json\")) { [System.IO.File]::WriteAllText(\"$persist_dir\\config.json\", \"{}`n\", (New-Object System.Text.UTF8Encoding($false))) }",
         "if (!(Test-Path -LiteralPath \"$persist_dir\\cache.db\")) { New-Item -Path \"$persist_dir\\cache.db\" -ItemType File -ErrorAction Stop | Out-Null }"
     ],
-    "bin": [["sing-box.exe", "sing-box-michongs-beta"]],
+    "bin": "sing-box.exe",
     "persist": ["config", "config.d", "config.json", "cache.db"],
     "checkver": {
         "url": "https://api.github.com/repos/MiChongs/sing-box/releases?per_page=100",

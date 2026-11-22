@@ -7,7 +7,7 @@
         "开机自启命令:",
         "& \"$env:USERPROFILE\\scoop\\apps\\atk-hub\\current\\resources\\service\\atk-hub-service.exe\" install --app \"$env:USERPROFILE\\scoop\\apps\\atk-hub\\current\\ATK HUB.exe\" --start",
         "暂停开机自启命令:",
-        "& \"$env:USERPROFILE\\scoop\\apps\\atk-hub\\current\\resources\\service\\atk-hub-service.exe\" stop"
+        "& \"$env:USERPROFILE\\scoop\\apps\\atk-hub\\current\\resources\\service\\atk-hub-service.exe\" stop",
         "卸载开机自启命令:",
         "& \"$env:USERPROFILE\\scoop\\apps\\atk-hub\\current\\resources\\service\\atk-hub-service.exe\" uninstall"
     ],

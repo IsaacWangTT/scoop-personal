@@ -1,0 +1,38 @@
+{
+    "version": "1.14.0-xiaobaf14g.1",
+    "description": "The universal proxy platform, MiChongs stable build",
+    "homepage": "https://github.com/MiChongs/sing-box",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/MiChongs/sing-box/releases/download/v1.14.1-xiaobaf14g.1/sing-box-1.14.1-xiaobaf14g.1-windows-amd64-v3.tar.gz",
+            "hash": "02708d53c34d0b6f3d8d643c9c763464b71a25de8927863451584f1e0a2c9b7a"
+        },
+        "arm64": {
+            "url": "https://github.com/MiChongs/sing-box/releases/download/v1.14.1-xiaobaf14g.1/sing-box-1.14.1-xiaobaf14g.1-windows-arm64.tar.gz",
+            "hash": "b0940747c9a124a44f4c3aaba9051849e08fbbbe3a054fc3e2ca7a59c737efb4"
+        }
+    },
+    "pre_install": [
+        "$exe = @(Get-ChildItem -LiteralPath $dir -File -Filter \"sing-box-$version-windows-*.exe\")",
+        "if ($exe.Count -ne 1) { throw 'Expected exactly one versioned sing-box executable in the archive root.' }",
+        "Rename-Item -LiteralPath $exe[0].FullName -NewName 'sing-box.exe' -ErrorAction Stop",
+        "if (!(Test-Path -LiteralPath $persist_dir)) { New-Item -Path $persist_dir -ItemType Directory -ErrorAction Stop | Out-Null }",
+        "if (!(Test-Path -LiteralPath \"$persist_dir\\config.json\")) { [System.IO.File]::WriteAllText(\"$persist_dir\\config.json\", \"{}`n\", (New-Object System.Text.UTF8Encoding($false))) }",
+        "if (!(Test-Path -LiteralPath \"$persist_dir\\cache.db\")) { New-Item -Path \"$persist_dir\\cache.db\" -ItemType File -ErrorAction Stop | Out-Null }"
+    ],
+    "bin": [["sing-box.exe", "sing-box-michongs"]],
+    "persist": ["config", "config.d", "config.json", "cache.db"],
+    "checkver": {
+        "url": "https://api.github.com/repos/MiChongs/sing-box/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "^v(\\d+\\.\\d+\\.\\d+-xiaobaf14g\\.\\d+)$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": { "url": "https://github.com/MiChongs/sing-box/releases/download/v$version/sing-box-$version-windows-amd64-v3.tar.gz" },
+            "arm64": { "url": "https://github.com/MiChongs/sing-box/releases/download/v$version/sing-box-$version-windows-arm64.tar.gz" }
+        },
+        "hash": { "url": "$baseurl/SHA256SUMS" }
+    }
+}

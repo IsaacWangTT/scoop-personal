@@ -1,7 +1,7 @@
 {
     "homepage": "https://arena.5eplay.com/",
     "description": "5E对战平台，面向 CS2 的竞技对战平台",
-    "version": "8.2.7",
+    "version": "8.2.9",
     "license": "Proprietary",
     "architecture": {
         "64bit": {

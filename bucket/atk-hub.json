@@ -3,6 +3,14 @@
     "description": "ATK Hub / VXE",
     "homepage": "https://vxe.com",
     "license": "Freeware",
+    "notes": [
+        "开机自启命令:",
+        "& \"$env:USERPROFILE\scoop\apps\atk-hub\current\resources\service\atk-hub-service.exe\" install --app \"$env:USERPROFILE\scoop\apps\atk-hub\current\ATK HUB.exe\" --start",
+        "暂停开机自启命令",
+        "& \"$env:USERPROFILE\scoop\apps\atk-hub\current\resources\service\atk-hub-service.exe\" stop"
+        "卸载开机自启命令",
+        "& \"$env:USERPROFILE\scoop\apps\atk-hub\current\resources\service\atk-hub-service.exe\" uninstall"
+    ],
     "url": "https://dl-global.atk.io/ATK-hub/atk-hub-3.2.33.exe#/dl.7z",
     "hash": "decaa498875c2cb91603c3d3c068dadb30efb0cfbb74a9994c3d3074c972b9cf",
     "installer": {

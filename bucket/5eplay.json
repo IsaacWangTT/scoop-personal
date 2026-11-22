@@ -1,0 +1,39 @@
+{
+    "homepage": "https://arena.5eplay.com/",
+    "description": "5E对战平台，面向 CS2 的竞技对战平台",
+    "version": "8.2.7",
+    "license": "Proprietary",
+    "architecture": {
+        "64bit": {
+            "url": "https://oss-arena.5eplay.com/client/5EClient-8.2.9.exe#/dl.7z",
+            "hash": "sha512:88a4b97fd75748426dd8b2ea0928e916d871b5ddc102d02e1d8f5e8e9a0e99f671396de75729a1f0be73680056b993c4d40eac98252213cc54363632f2355d2d"
+        }
+    },
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
+            "Remove-Item -LiteralPath \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Force -Recurse"
+        ]
+    },
+    "shortcuts": [
+        [
+            "5EClient.exe",
+            "5E对战平台"
+        ]
+    ],
+    "checkver": {
+        "url": "https://oss-arena.5eplay.com/client/latest.yml",
+        "regex": "(?m)^path:[ \\t]*5EClient-(\\d+(?:\\.\\d+)+)\\.exe[ \\t]*\\r?$"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://oss-arena.5eplay.com/client/5EClient-$version.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "https://oss-arena.5eplay.com/client/latest.yml",
+            "regex": "(?m)^sha512:[ \\t]*$base64"
+        }
+    }
+}

@@ -1,5 +1,5 @@
 {
-    "version": "1.15.0-alpha.13-xiaobaf14g.10",
+    "version": "1.15.0-alpha.13-xiaobaf14g.17",
     "description": "The universal proxy platform, MiChongs prerelease build",
     "homepage": "https://github.com/MiChongs/sing-box",
     "license": "GPL-3.0-or-later",
@@ -22,7 +22,12 @@
         "if (!(Test-Path -LiteralPath \"$persist_dir\\cache.db\")) { New-Item -Path \"$persist_dir\\cache.db\" -ItemType File -ErrorAction Stop | Out-Null }"
     ],
     "bin": "sing-box.exe",
-    "persist": ["config", "config.d", "config.json", "cache.db"],
+    "persist": [
+        "config",
+        "config.d",
+        "config.json",
+        "cache.db"
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/MiChongs/sing-box/releases?per_page=100",
         "jsonpath": "$[?(@.prerelease == true)].tag_name",
@@ -30,9 +35,15 @@
     },
     "autoupdate": {
         "architecture": {
-            "64bit": { "url": "https://github.com/MiChongs/sing-box/releases/download/v$version/sing-box-$version-windows-amd64-v3.tar.gz" },
-            "arm64": { "url": "https://github.com/MiChongs/sing-box/releases/download/v$version/sing-box-$version-windows-arm64.tar.gz" }
+            "64bit": {
+                "url": "https://github.com/MiChongs/sing-box/releases/download/v$version/sing-box-$version-windows-amd64-v3.tar.gz"
+            },
+            "arm64": {
+                "url": "https://github.com/MiChongs/sing-box/releases/download/v$version/sing-box-$version-windows-arm64.tar.gz"
+            }
         },
-        "hash": { "url": "$baseurl/SHA256SUMS" }
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
     }
 }

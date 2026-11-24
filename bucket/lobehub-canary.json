@@ -1,12 +1,12 @@
 {
-    "version": "2.3.6-canary.1",
+    "version": "2.3.7-canary.1",
     "description": "LobeHub Desktop Canary - an open-source AI Agent Workspace.",
     "homepage": "https://github.com/lobehub/lobehub",
     "license": "LobeHub Community License",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/lobehub/lobehub/releases/download/v2.3.6-canary.1/LobeHub-2.3.6-canary.1-setup.exe#/dl.7z",
-            "hash": "704cf7c3a98c978dfe177cd798434122880986209878d39e613f13fa80c5fc99"
+            "url": "https://github.com/lobehub/lobehub/releases/download/v2.3.7-canary.1/LobeHub-2.3.7-canary.1-setup.exe#/dl.7z",
+            "hash": "0423ac09cc4b6f10d42b6862ef71433937cd8980db08339b7e4182c5958d3b77"
         }
     },
     "installer": {
